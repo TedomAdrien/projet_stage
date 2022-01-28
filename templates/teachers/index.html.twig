@@ -3,12 +3,18 @@
 {% block title 'Find all the teachers of ISTEC'%}
 
 {% block body %}
+ 
+ <nav>
+    <ul>
+        
+        <li><a href="{{ path('/teachers')}}">Teachers</a></li>
+        <li><a href="{{ path('/create')}}">New Teacher</a></li>
 
  <h1>{{ pluralize(teachers|length, 'Teacher') }}</h1>
 
         {% for teacher in teachers%}
             <article> 
-                <h2><a href="{{ path('teachers_teacher_show', {id: teacher.id}) }}"></a></h2>
+                <h2><a href="{{ path('teachers/show',{id: teacher.id}) }}"></a></h2>
                 <p>{{ teacher.description }}</p>
             </article>
         {% endfor%}

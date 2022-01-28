@@ -1,11 +1,11 @@
-{% extends 'base.html.twig' %}
+{% extends 'index.html.twig' %}
 
 {% block title teacher.title %}
 
 {% block body %}
     <article>
-    <h1>{{ teacher.title}} </h1>
-    <p>{{ pin.description}} </p>
+        <h1>{{ teacher.title}} </h1>
+        <p>{{ teacher.description}} </p>
     </article>
 
     <a href="{{  path('/teachers) }}>Go Back</a>
