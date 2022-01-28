@@ -8,7 +8,7 @@
 
         {% for teacher in teachers%}
             <article> 
-                <h2><a href="{{ path('teachers_teacher_show', {id: teacher.id}) }}">{{}}</a></h2>
+                <h2><a href="{{ path('teachers_teacher_show', {id: teacher.id}) }}"></a></h2>
                 <p>{{ teacher.description }}</p>
             </article>
         {% endfor%}
