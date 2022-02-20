@@ -14,7 +14,7 @@ final class Version20220126144710 extends AbstractMigration
 {
     public function getDescription(): string
     {
-        return '';
+        return 'Add created_at and update_at fields to teachers table';
     }
 
     public function up(Schema $schema): void

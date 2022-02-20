@@ -1,4 +1,4 @@
-{% extends 'index.html.twig' %}
+{% extends 'base.html.twig' %}
 
 {% block title teacher.title %}
 
@@ -8,6 +8,7 @@
         <p>{{ teacher.description}} </p>
     </article>
 
-    <a href="{{  path('/teachers) }}>Go Back</a>
+    <a href="{{ path('app_teachers_edit', {id: teacher.id} )}}">Edit</a> |
+    <a href="{{  path('app_home') }}">Go Back</a>
 
 {% endblock %}

@@ -1,0 +1,16 @@
+{% extends 'base.html.twig' %}
+
+{% block title 'Edit Teacher #' ~ teacher.id %}
+
+{% block body %}
+
+    <h1>Edit teacher #{{ teacher.id}}</h1>
+
+        {{ form_start(form) }}
+            {{ form_widget(form) }}
+
+                <input type="submit" value="Update Teacher">
+
+        {{ form_end(form) }}
+ 
+{% endblock %}
