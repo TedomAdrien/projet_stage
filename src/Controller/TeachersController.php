@@ -3,13 +3,12 @@
 namespace App\Controller;
 
 use App\Entity\Teacher;
+use App\Form\TeacherType;
 use App\Repository\TeacherRepository;
 use Doctrine\ORM\EntityManagerInterface;
 use phpDocumentor\Reflection\DocBlock\Tag;
- use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
+use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\Request;
- use Symfony\Component\Form\Extension\Core\Type\TextType;
-use Symfony\Component\Form\Extension\Core\Type\TextareaType;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Annotation\Route;
 
@@ -34,11 +33,7 @@ class TeachersController extends AbstractController
     {
         $teacher = new Teacher;
 
-        $form = $this->createFormBuilder($teacher)
-        ->add('title', TextType::class)
-        ->add('description', TextareaType::class)
-        ->getForm()
-        ;
+        $form = $this->createForm(TeacherType::class, $teacher);
 
         $form->handleRequest($request);
 
@@ -78,12 +73,7 @@ class TeachersController extends AbstractController
      */
     public function edit(Request $request, Teacher $teacher, EntityManagerInterface $em): Response
     {
-        $form = $this->createFormBuilder($teacher)
-            ->add('title', TextType::class)
-            ->add('description', TextareaType::class)
-            ->getForm()
-            
-            ;
+        $form = $this->createForm(TeacherType::class, $teacher);
 
         $form->handleRequest($request);
 
@@ -105,6 +95,16 @@ class TeachersController extends AbstractController
    
     
 }
+    /**
+     * @Route("/teachers/{id<[0-9]+>}/delete", name="app_teachers_delete", methods={"GET"})
+     */
+    public function delete(Teacher $teacher, EntityManagerInterface $em): Response
+    {
+        $em->remove($teacher);
+        $em->flush();
+
+        return $this->redirectToRoute('app_home');  
+    }
 
 }
  
