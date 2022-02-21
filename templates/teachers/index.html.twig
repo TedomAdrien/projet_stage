@@ -1,4 +1,4 @@
-{% extends 'base.html.twig' %}
+{% extends 'layouts/base.html.twig' %}
 
 {% block title 'Find all the teachers of ISTEC'%}
 
@@ -10,7 +10,8 @@
         {% for teacher in teachers%}
             <article> 
                 <h2><a href="{{ path('app_teachers_show', {id: teacher.id}) }}">{{ teacher.title }}</a></h2>
-                <p>{{ teacher.description }}</p>
+                <p>{{ teacher.description | u.truncate(10, '...', false) }}</p>
+                <p>Submitted {{ teacher.CreatedAt | ago }}</p>
             </article>
         {% endfor%}
 

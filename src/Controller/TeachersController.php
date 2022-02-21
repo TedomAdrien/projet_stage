@@ -45,6 +45,8 @@ class TeachersController extends AbstractController
                 $em->persist($teacher);
                 $em->flush();
 
+                $this->addFlash('success','Teacher successfully created!');
+
                 return $this->redirectToRoute('app_home');
 
             }
@@ -85,6 +87,9 @@ class TeachersController extends AbstractController
             // $em->persist($teacher);
             $em->flush();
 
+            $this->addFlash('success', 'Teacher had successfully been Modified!');
+
+
             return $this->redirectToRoute('app_home');  
         }
 
@@ -95,6 +100,8 @@ class TeachersController extends AbstractController
    
     
 }
+
+
     /**
      * @Route("/teachers/{id<[0-9]+>}/delete", name="app_teachers_delete", methods={"GET"})
      */
@@ -102,6 +109,9 @@ class TeachersController extends AbstractController
     {
         $em->remove($teacher);
         $em->flush();
+
+        $this->addFlash('info', 'Teacher successfully deleted!');
+
 
         return $this->redirectToRoute('app_home');  
     }
