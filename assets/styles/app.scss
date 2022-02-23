@@ -1,0 +1,31 @@
+@import "~bootstrap/scss/bootstrap";
+
+body {
+    background-color: lightgray;
+}
+
+.alert {
+    padding: 10px;
+    color: white;
+    text-align: center;
+    margin: 0;
+    border: none;
+    border-radius: 0;
+            }
+
+.ml-auto{
+    margin-left: auto;
+        }
+          
+.btn-block {
+    margin-top: 6px;
+    display: block;
+    width: 100%;
+            }
+.alert-success {
+    background-color: green;
+            }
+
+.alert-info {
+background-color: red;
+            }
