@@ -5,6 +5,7 @@ namespace App\Form;
 use App\Entity\Teacher;
 use Symfony\Component\Form\AbstractType;
 use Symfony\Component\Form\FormBuilderInterface;
+use Vich\UploaderBundle\Form\Type\VichImageType;
 use Symfony\Component\OptionsResolver\OptionsResolver;
 
 class TeacherType extends AbstractType
@@ -12,8 +13,15 @@ class TeacherType extends AbstractType
     public function buildForm(FormBuilderInterface $builder, array $options): void
     {
         $builder
-            ->add('title')
-            ->add('Description')
+        ->add('imageFile', VichImageType::class, [
+            'label' => 'Image (JPG ou PNG)',
+            'required' => false,
+            'allow_delete' => true,
+            'download_uri' => false,
+            
+        ])
+        ->add('title')
+        ->add('Description')
         
         ;
     }
