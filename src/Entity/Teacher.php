@@ -5,6 +5,7 @@ namespace App\Entity;
 use App\Entity\Traits\Timestampable;
 use App\Repository\TeacherRepository;
 use Doctrine\ORM\Mapping as ORM;
+use Symfony\Component\Validator\Constraints as Assert; 
 
 /**
  * @ORM\Entity(repositoryClass=TeacherRepository::class)
@@ -24,11 +25,15 @@ class Teacher
 
     /**
      * @ORM\Column(type="string", length=255)
+     * @Assert\NotBlank(message="Title can't be blank")
+     * @Assert\Length(min=4)
      */
     private $title;
 
     /**
      * @ORM\Column(type="text")
+     * @Assert\NotBlank
+     * @Assert\Length(min=16, minMessage="la description est trop courte")
      */
     private $Description;
 
@@ -43,7 +48,7 @@ class Teacher
         return $this->title;
     }
 
-    public function setTitle(string $title): self
+    public function setTitle(?string $title): self
     {
         $this->title = $title;
 
@@ -55,7 +60,7 @@ class Teacher
         return $this->Description;
     }
 
-    public function setDescription(string $Description): self
+    public function setDescription(?string $Description): self
     {
         $this->Description = $Description;
 
