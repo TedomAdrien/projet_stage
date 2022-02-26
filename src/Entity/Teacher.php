@@ -45,6 +45,7 @@ class Teacher
      * NOTE: This is not a mapped field of entity metadata, just a simple property.
      * 
      * @Vich\UploadableField(mapping="teacher_image", fileNameProperty="imageName")
+     * @Assert\Image(maxSize="10M")
      * 
      * @var File|null
      */

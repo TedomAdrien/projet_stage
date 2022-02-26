@@ -18,7 +18,8 @@ class TeacherType extends AbstractType
             'required' => false,
             'allow_delete' => true,
             'download_uri' => false,
-            
+            'imagine_pattern' => 'squared_thumbnail_medium'
+          
         ])
         ->add('title')
         ->add('Description')
