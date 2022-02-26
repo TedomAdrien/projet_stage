@@ -13,7 +13,7 @@
                         <article class="teacher bg-white rounded shadow">
                             <div class="mw-100 overflow-hidden">
                                 <a href="{{ path('app_teachers_show', {id: teacher.id}) }}">
-                                    <img src="{{ (teacher.imageName ? vich_uploader_asset(teacher) : asset('images/Logo.jpg')) | imagine_filter('squared_thumbnail_medium') }}" alt="{{ teacher.title }}" class="w-100 rounded-top"/>
+                                    <img src="{{ (teacher.imageName ? vich_uploader_asset(teacher) : asset('build/images/Logo.jpg')) | imagine_filter('squared_thumbnail_medium') }}" alt="{{ teacher.title }}" class="w-100 rounded-top"/>
                                 </a>
                             </div>
                             <div class="pt-3">
