@@ -8,14 +8,14 @@
         <div class="col-md-6 mx-auto">
 
         <article class="teacher bg-white rounded shadow">
-            <div class="mw-100 overflow-hidden">
+            <div class="mw-100 rounded-top overflow-hidden">
                 <a href="{{ path('app_teachers_show', {id: teacher.id}) }}">
-                    <img src="{{ (teacher.imageName ? vich_uploader_asset(teacher) : asset('build/images/Logo.jpg')) | imagine_filter('squared_thumbnail_medium') }}" alt="{{ teacher.title }}" class="w-100 rounded-top"/>
+                    <img src="{{ (teacher.imageName ? vich_uploader_asset(teacher) : asset('build/images/Logo.jpg')) | imagine_filter('squared_thumbnail_medium') }}" alt="{{ teacher.title }}" class="w-100"/>
                 </a>
             </div>
             <div class="paddin">         
-                <h2 class="h5 pt-3"><a href="{{ path('app_teachers_show', {id: teacher.id}) }}"           class="text-secondary text-decoration-none">{{ teacher.title }}</a>
-                </h2>
+                <h1 class="h5 pt-3"><a href="{{ path('app_teachers_show', {id: teacher.id}) }}"           class="text-secondary text-decoration-none">{{ teacher.title }}</a>
+                </h1>
                         <p class="pb-3">
                             {{ teacher.description}}
                         </p>
