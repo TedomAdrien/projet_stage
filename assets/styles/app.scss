@@ -53,3 +53,21 @@ background-color: red;
             transform: scale(1.075);
         }
     }
+
+    .paddin {
+        padding-left: 10px;
+    }
+    .paddin .Ad {
+        padding-left: 130px;
+        margin: 20px;
+    }
+
+    .paddin .Ad .btn{
+        background-color: rgb(19, 18, 18);
+        border: none;
+        color: rgb(252, 248, 248);
+        display: inline-block;
+        padding: 20px;
+        margin: 2px 2px;
+        cursor: pointer;
+    }

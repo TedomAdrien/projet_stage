@@ -3,13 +3,39 @@
 {% block title teacher.title %}
 
 {% block body %}
-    <article>
-        <h1>{{ teacher.title}} </h1>
-        <p>{{ teacher.description}} </p>
-    </article>
 
-        <a href="{{ path('app_teachers_edit', {id: teacher.id} )}}">Edit</a> |
-        <a href="{{ path('app_teachers_delete', {id: teacher.id} )}}">Delete</a> |
-        <a href="{{  path('app_home') }}">Go Back</a>
+    <div class="row">
+        <div class="col-md-6 mx-auto">
+
+        <article class="teacher bg-white rounded shadow">
+            <div class="mw-100 overflow-hidden">
+                <a href="{{ path('app_teachers_show', {id: teacher.id}) }}">
+                    <img src="{{ (teacher.imageName ? vich_uploader_asset(teacher) : asset('build/images/Logo.jpg')) | imagine_filter('squared_thumbnail_small') }}" alt="{{ teacher.title }}" class="w-100 rounded-top"/>
+                </a>
+            </div>
+            <div class="paddin">         
+                <h2 class="h5 pt-3"><a href="{{ path('app_teachers_show', {id: teacher.id}) }}"           class="text-secondary text-decoration-none">{{ teacher.title }}</a>
+                </h2>
+                     <p class="pb-3 pl-3 text-muted">
+                        <small>
+                            Submitted 
+                            <time datetime="{{ teacher.createdAt|date('Y-m-d H:i:s') }}">{{ teacher.createdAt|ago }} </time>
+                            by [OWNER FULL NAME]
+                        </small>
+                        </p>
+                        <p class="pb-3">
+                            {{ teacher.description}}
+                        </p>
+
+                    <div class="Ad pl-3 pb-3">
+                        <a href="{{ path('app_teachers_edit', {id: teacher.id} )}}" class="btn">Edit</a> 
+                        <a href="{{ path('app_teachers_delete', {id: teacher.id} )}}"class="btn">Delete</a> 
+                        <a href="{{  path('app_home') }}"class="btn">Go Back</a>
+                    </div>
+            </div>
+        </article>
+
+        </div>
+    </div>    
 
 {% endblock %}
