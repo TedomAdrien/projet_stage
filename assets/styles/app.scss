@@ -1,7 +1,11 @@
 @import "~bootstrap/scss/bootstrap";
 
 body {
-    background-color: lightgray;
+    background-color: white;
+}
+
+.navbar {
+    background-color: lightgrey;
 }
 
 .alert {
@@ -30,3 +34,22 @@ body {
 background-color: red;
             }
 
+.form-group .form-check {
+    margin-top: 15px;
+    margin-bottom: 15px;
+                
+    }
+
+    .vich-image img {
+        @extend .mb-2;
+        @extend .rounded;
+        @extend .shadow;
+        @extend .img-thumbnail;
+    }
+
+    .teacher img {
+        transition: transform 0.3s ease-out;
+        &:hover {
+            transform: scale(1.075);
+        }
+    }
