@@ -9,14 +9,13 @@
 
         <article class="teacher bg-white rounded shadow">
             <div class="mw-100 rounded-top overflow-hidden">
-                <a href="{{ path('app_teachers_show', {id: teacher.id}) }}">
                     <img src="{{ (teacher.imageName ? vich_uploader_asset(teacher) : asset('build/images/Logo.jpg')) | imagine_filter('squared_thumbnail_medium') }}" alt="{{ teacher.title }}" class="w-100"/>
-                </a>
+                
             </div>
             <div class="paddin">         
-                <h1 class="h5 pt-3"><a href="{{ path('app_teachers_show', {id: teacher.id}) }}"           class="text-secondary text-decoration-none">{{ teacher.title }}</a>
+                <h1 class="h5 pt-3 text-secondary text-decoration-none">{{ teacher.title }}
                 </h1>
-                        <p class="pb-3">
+                        <p class="pb-3 pr-3">
                             {{ teacher.description}}
                         </p>
                      <p class="pb-3 pl-3 text-muted">
