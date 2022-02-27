@@ -23,7 +23,7 @@
                         <small>
                             Submitted 
                             <time datetime="{{ teacher.createdAt|date('Y-m-d H:i:s') }}">{{ teacher.createdAt|ago }} </time>
-                            by [OWNER FULL NAME]
+                            by {{ teacher.user.fullName }}
                         </small>
                         </p>
 
