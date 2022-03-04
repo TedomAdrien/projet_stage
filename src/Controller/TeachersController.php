@@ -26,6 +26,7 @@ class TeachersController extends AbstractController
     }
 
 
+
     /**
      * @Route("/teachers/create", name="app_teachers_create", methods={"GET", "POST"})
      */
@@ -38,10 +39,7 @@ class TeachersController extends AbstractController
         $form->handleRequest($request);
 
             if ($form->isSubmitted() && $form->isValid()) {
-                // $teacher = $form->getData();
-                // $teacher = new Teacher;
-                // $teacher->setTitle($data['title']);
-                // $teacher->setDescription($data['description']);
+                $teacher->setUser($this->getUser()); 
                 $em->persist($teacher);
                 $em->flush();
 

@@ -22,6 +22,11 @@ class TeacherType extends AbstractType
           
         ])
         ->add('title')
+        ->add('Nom')
+        ->add('Prenom')
+        ->add('Email')
+        ->add('Contact')
+        ->add('Matiere')
         ->add('Description')
         
         ;
