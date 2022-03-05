@@ -1,0 +1,16 @@
+{% extends 'layouts/base.html.twig' %}
+
+{% block title 'Gestion de Presence' %}
+
+{% block body %}
+
+ <h1 class="text-muted text-center">Gestion des fiches de presence</h1>
+<div class="paddin1">  
+        <div class="Ad_choice">
+
+            <a href="{{ path('present_create') }}"class="btn">Nouvelle Fiche</a>
+            <a href="#"class="btn">Toutes les fiches</a>
+        </div>
+</div>
+
+{% endblock %}
