@@ -11,15 +11,15 @@
                 {% for teacher in row %}
                     <div class="col-md-4">
                         <article class="teacher bg-white rounded shadow">
-                            <div class="mw-100 overflow-hidden">
+                            <div class="mw-100  rounded-top overflow-hidden">
                                 <a href="{{ path('app_teachers_show', {id: teacher.id}) }}">
-                                    <img src="{{ (teacher.imageName ? vich_uploader_asset(teacher) : asset('build/images/Logo.jpg')) | imagine_filter('squared_thumbnail_medium') }}" alt="{{ teacher.title }}" class="w-100 rounded-top"/>
+                                    <img src="{{ (teacher.imageName ? vich_uploader_asset(teacher) : asset('build/images/homme.jpg')) | imagine_filter('squared_thumbnail_medium') }}" alt="{{ teacher.title }}" class="w-100"/>
                                 </a>
                             </div>
                             <div class="paddin">
-                            <h2 class="h5 pt-3"><a href="{{ path('app_teachers_show', {id: teacher.id}) }}" class="text-secondary text-decoration-none">{{ teacher.title }}</a></h2>
+                            <h2 class="h5 pt-3"><a href="{{ path('app_teachers_show', {id: teacher.id}) }}" class="text-secondary text-decoration-none">{{ teacher.title }} {{ teacher.nom }} {{ teacher.prenom }}</a></h2>
                             <p>{{ teacher.description | u.truncate(50, '...', false) }}</p>
-                            <p class="pb-3 pl-3 text-muted"><small>Submitted [OWNER FULL NAME]</small></p>
+                            <p class="pb-3 pl-3 text-muted"><small>Submitted by  ISTEC_Admin </small></p>
                             </div>
                         </article>
                     </div>

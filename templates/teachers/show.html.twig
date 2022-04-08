@@ -6,33 +6,47 @@
 
     <div class="row">
         <div class="col-md-6 mx-auto">
+            <h1 class="text-center text-muted">{{ teacher.title}}   {{ teacher.nom}}
+                            {{ teacher.prenom}}</h1>
 
         <article class="teacher bg-white rounded shadow">
-            <div class="mw-100 overflow-hidden">
-                <a href="{{ path('app_teachers_show', {id: teacher.id}) }}">
-                    <img src="{{ (teacher.imageName ? vich_uploader_asset(teacher) : asset('build/images/Logo.jpg')) | imagine_filter('squared_thumbnail_medium') }}" alt="{{ teacher.title }}" class="w-100 rounded-top"/>
-                </a>
+            <div class="mw-100 rounded-top overflow-hidden">
+                    <img src="{{ (teacher.imageName ? vich_uploader_asset(teacher) : asset('build/images/homme.jpg')) | imagine_filter('squared_thumbnail_medium') }}" alt="{{ teacher.title }}" class="w-100"/>
+                
             </div>
             <div class="paddin">         
-                <h2 class="h5 pt-3"><a href="{{ path('app_teachers_show', {id: teacher.id}) }}"           class="text-secondary text-decoration-none">{{ teacher.title }}</a>
-                </h2>
-                        <p class="pb-3">
-                            {{ teacher.description}}
+                <h1 class="h5 pt-3 text-decoration-none">Contact : {{ teacher.contact }}
+                </h1>
+                <h1 class="h5 pt-3 text-decoration-none">Gmail : {{ teacher.email }}
+                </h1>
+                        <p class="pb-3 pr-3">
+                           <h5>Biography : </h5>{{ teacher.description}}
                         </p>
                      <p class="pb-3 pl-3 text-muted">
                         <small>
                             Submitted 
                             <time datetime="{{ teacher.createdAt|date('Y-m-d H:i:s') }}">{{ teacher.createdAt|ago }} </time>
-                            by [OWNER FULL NAME]
+                            by  ISTEC_Admin 
                         </small>
                         </p>
 
                     <div class="Ad pl-3 pb-3">
+                    {% if app.user %}
                         <a href="{{ path('app_teachers_edit', {id: teacher.id} )}}" class="btn">Edit</a> 
                         <a href="{{ path('app_teachers_delete', {id: teacher.id} )}}"class="btn">Delete</a> 
                         <a href="{{  path('app_home') }}"class="btn">Go Back</a>
-                    </div>
-            </div>
+                     </div>
+             </div>
+
+                    {% else %}
+
+                        <di class="Af">
+                       <a href="{{  path('app_home') }}"class="btn align-items-center">Go Back</a>
+                        </div>
+            
+                    {% endif %}
+                   
+
         </article>
 
         </div>

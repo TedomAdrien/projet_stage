@@ -41,10 +41,8 @@ background-color: red;
     }
 
     .vich-image img {
-        @extend .mb-2;
-        @extend .rounded;
-        @extend .shadow;
-        @extend .img-thumbnail;
+        @extend .mb-2, .rounded, .shadow, .img-thumbnail;
+      
     }
 
     .teacher img {
@@ -56,14 +54,37 @@ background-color: red;
 
     .paddin {
         padding-left: 10px;
+        background-color: orange;
+    }
+
+        
+    
+     .paddin1 .Ad_choice {
+        padding-left: 400px;
+        margin: 20px;
     }
     .paddin .Ad {
-        padding-left: 130px;
+        padding-left: 100px;
+        margin: 20px;
+    }
+
+    .Af {
+        padding-left: 40px;
         margin: 20px;
     }
 
     .paddin .Ad .btn{
         background-color: rgb(19, 18, 18);
+        border: none;
+        color: rgb(252, 248, 248);
+        display: inline-block;
+        padding: 20px;
+        margin: 2px 2px;
+        cursor: pointer;
+    }
+
+     .paddin1 .Ad_choice .btn{
+        background-color: blue;
         border: none;
         color: rgb(252, 248, 248);
         display: inline-block;
